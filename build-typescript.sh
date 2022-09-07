@@ -15,4 +15,6 @@ npm pkg set name=@kidonng/typescript version="${1:-0.0.0}"
 npm pkg delete bin scripts.prepare
 npm pack
 
-[[ -n "$1" ]] && npm publish --access public
+if [[ -n "$1" ]]; then
+	npm publish --access public
+fi

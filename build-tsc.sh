@@ -13,8 +13,9 @@ npx uglify-js --compress --mangle --output $lib/tsc.js -- $lib/tsc.js
 pushd $pkg
 npm pkg set name=@kidonng/tsc version="${1:-0.0.0}"
 npm pkg delete main typings bin.tsserver scripts.prepare
-npm pack
 
 if [[ -n "$1" ]]; then
 	npm publish --access public
+else
+	npm pack
 fi

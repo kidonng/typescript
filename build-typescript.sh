@@ -13,8 +13,9 @@ npx uglify-js --compress --mangle --output $lib/typescript.js -- $lib/typescript
 pushd $pkg
 npm pkg set name=@kidonng/typescript version="${1:-0.0.0}"
 npm pkg delete bin scripts.prepare
-npm pack
 
 if [[ -n "$1" ]]; then
 	npm publish --access public
+else
+	npm pack
 fi

@@ -6,12 +6,20 @@ This distribution comes with two packages:
 
 ## `@kidonng/tsc`
 
+```sh
+npm install @kidonng/tsc
+```
+
 Contains only the `tsc` executable. Install this if:
 
 - Your build process only requires `tsc`
 - Your build tools don't actually use `typescript` the package (e.g. [`esbuild`](https://github.com/evanw/esbuild))
 
 ## `@kidonng/typescript`
+
+```sh
+npm install typescript@npm:@kidonng/typescript
+```
 
 Contains only the `typescript` module. Install this if:
 

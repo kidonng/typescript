@@ -2,6 +2,7 @@ pkg=$(mktemp -d)
 lib=$pkg/lib
 
 cp -r node_modules/typescript/* $pkg
+cp README.md $pkg
 
 rm -r $pkg/bin
 rm $lib/{tsserver,typingsInstaller,tsc}.js
@@ -11,8 +12,12 @@ rm -r $lib/{cs,de,es,fr,it,ja,ko,pl,pt-br,ru,tr,zh-cn,zh-tw} $pkg/loc
 npx uglify-js --compress --mangle --output $lib/typescript.js -- $lib/typescript.js
 
 pushd $pkg
-npm pkg set name=@kidonng/typescript version="${1:-0.0.0}"
-npm pkg delete bin scripts.prepare
+npm pkg set \
+	name=@kidonng/typescript \
+	version="${1:-0.0.0}" \
+	description="A smaller redistribution of TypeScript" \
+	repository=kidonng/tsc
+npm pkg delete bin scripts.prepare homepage bugs
 
 if [[ -n "$1" ]]; then
 	npm publish --access public

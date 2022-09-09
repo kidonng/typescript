@@ -4,7 +4,7 @@ This is a redistribution of [TypeScript](https://github.com/microsoft/TypeScript
 
 This distribution comes with two packages:
 
-## `@kidonng/tsc`
+## `@kidonng/tsc` [![install size](https://packagephobia.com/badge?p=@kidonng/tsc)](https://packagephobia.com/result?p=@kidonng/tsc)
 
 ```sh
 npm install @kidonng/tsc
@@ -15,7 +15,7 @@ Contains only the `tsc` executable. Install this if:
 - Your build process only requires `tsc`
 - Your build tools don't actually use `typescript` the package (e.g. [`esbuild`](https://github.com/evanw/esbuild))
 
-## `@kidonng/typescript`
+## `@kidonng/typescript` [![install size](https://packagephobia.com/badge?p=@kidonng/typescript)](https://packagephobia.com/result?p=@kidonng/typescript)
 
 ```sh
 npm install typescript@npm:@kidonng/typescript
@@ -30,9 +30,9 @@ Note this package does **not** come with `tsc`. Install `@kidonng/tsc` if you ne
 
 ## Motivation
 
-There's only one bad thing about TypeScript: [bundle size](https://github.com/microsoft/TypeScript/issues/27891). Every package/project is small until it uses/depends on `typescript`.
+There's only one bad thing about TypeScript: [![install size](https://packagephobia.com/badge?p=typescript)](https://packagephobia.com/result?p=typescript). Every package/project is small until it uses/depends on `typescript`.
 
-TypeScript has been working on modularization but it is a very slow process. Meanwhile the usage is only soaring. This is an imperfect solution to the issue, but I hope it serves well.
+TypeScript has been [working on modularization](https://github.com/microsoft/TypeScript/issues/27891) but it is a very slow process. Meanwhile the usage is only soaring. This is an imperfect solution to the issue, but I hope it serves well.
 
 The biggest offender seems to be `tsserver`, which is unnecessary most of the time because your editor already comes with one. Dropping it should be harmless most of the time.
 

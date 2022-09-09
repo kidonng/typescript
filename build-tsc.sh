@@ -16,7 +16,7 @@ npm pkg set \
 	name=@kidonng/tsc \
 	version="${1:-0.0.0}" \
 	description="A smaller redistribution of TypeScript" \
-	repository=kidonng/tsc
+	repository=kidonng/typescript
 npm pkg delete main typings bin.tsserver scripts.prepare homepage bugs
 
 if [[ -n "$1" ]]; then

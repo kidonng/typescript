@@ -1,4 +1,4 @@
-# tsc
+# TypeScript
 
 This is a redistribution of [TypeScript](https://github.com/microsoft/TypeScript). It features a smaller bundle size by removing "redundant" files and minifying.
 

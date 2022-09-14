@@ -9,7 +9,7 @@ rm $lib/{tsserver,typingsInstaller}.js
 rm $lib/{tsserverlibrary,typescriptServices,typescript}.{js,d.ts}
 rm -r $lib/{cs,de,es,fr,it,ja,ko,pl,pt-br,ru,tr,zh-cn,zh-tw} $pkg/loc
 
-pnpm uglify-js --compress --mangle --output $lib/tsc.js -- $lib/tsc.js
+pnpm uglifyjs --compress --mangle --output $lib/tsc.js -- $lib/tsc.js
 
 pushd $pkg
 npm pkg set \

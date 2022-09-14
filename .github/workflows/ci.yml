@@ -7,10 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: npm i -g pnpm@7
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
-      - run: npm ci
+          cache: pnpm
+      - run: pnpm install
       - run: bash build-tsc.sh
       - run: bash build-typescript.sh

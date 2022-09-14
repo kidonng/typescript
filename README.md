@@ -20,9 +20,31 @@ Contains only the `tsc` executable. Choose this if:
 
 ## `@kidonng/typescript` [![install size](https://packagephobia.com/badge?p=@kidonng/typescript)](https://packagephobia.com/result?p=@kidonng/typescript)
 
+<details>
+<summary>Override in <strong>npm/yarn 1</strong></summary>
+
 ```sh
 npm install typescript@npm:@kidonng/typescript
 ```
+
+</details>
+
+<details>
+<summary>Override in <strong>pnpm</strong></summary>
+
+Add to `package.json`:
+
+```json
+{
+  "pnpm": {
+    "overrides": {
+      "typescript": "npm:@kidonng/typescript@^4.8.3"
+    }
+  }
+}
+```
+
+</details>
 
 Contains only the `typescript.js` module. Choose this if:
 
@@ -48,7 +70,7 @@ The biggest offender seems to be `tsserver`, which is unnecessary most of the ti
 
 It should be a drop-in replacement to the official package. Manual E2E test using the [Vite](https://github.com/vitejs/vite) repository has been successful.
 
-The only compatibility issue is with [Yarn PnP](https://yarnpkg.com/features/pnp), which patches TypeScript to solve its own compatibility issues.
+The only compatibility issue is with Yarn 2+ (Berry), which [patches TypeScript](https://github.com/yarnpkg/berry/tree/master/packages/plugin-compat) to solve its own compatibility issues.
 
 **How can I ensure this distribution does not contain malicious code?**
 

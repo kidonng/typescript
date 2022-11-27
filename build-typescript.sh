@@ -50,3 +50,5 @@ if [[ -n "$1" ]]; then
 else
 	npm pack
 fi
+
+echo done $pkg

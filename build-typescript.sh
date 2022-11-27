@@ -48,7 +48,7 @@ npm pkg set \
 	version="${1:-0.0.0}" \
 	description="A smaller redistribution of TypeScript. x.xxx% of the original size" \
 	repository=kidonng/typescript
-npm pkg delete bin scripts.prepare homepage bugs
+npm pkg delete bin scripts homepage bugs engines devDependencies overrides packageManager volta
 
 size2=$(du -sb . | cut -d$'\t' -f1)
 relative_size=$(divide_1000 $(( size2 * 100 * 1000 / size1)))

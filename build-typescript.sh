@@ -30,7 +30,9 @@ rm $lib/{tsserver,typingsInstaller,tsc}.js
 rm $lib/{tsserverlibrary,typescriptServices}.{js,d.ts}
 rm -r $lib/{cs,de,es,fr,it,ja,ko,pl,pt-br,ru,tr,zh-cn,zh-tw} $pkg/loc
 
-pnpm uglifyjs --compress --mangle --output $lib/typescript.js -- $lib/typescript.js
+for f in $lib/*.js; do
+  pnpm uglifyjs --compress --mangle --output $f -- $f
+done
 
 ./dts-minify -w $lib/*.d.ts
 

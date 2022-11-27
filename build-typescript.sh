@@ -28,6 +28,7 @@ size1=$(du -sb node_modules/typescript/ | cut -d$'\t' -f1)
 cp -r node_modules/typescript/* $pkg
 cp README.md $pkg
 
+for f in lib/README.md AUTHORS.md SECURITY.md CODE_OF_CONDUCT.md; do rm $pkg/$f; done
 rm -r $pkg/bin
 rm $lib/{tsserver,typingsInstaller,tsc}.js
 rm $lib/{tsserverlibrary,typescriptServices}.{js,d.ts}

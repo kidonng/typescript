@@ -1,6 +1,10 @@
 pkg=$(mktemp -d)
 lib=$pkg/lib
 
+echo checking dependencies
+pnpm --version
+npm --version
+
 divide_1000() {
   # fixed-point math divison by 1000
   if [[ "$1" == "" ]]; then echo 0; return; fi

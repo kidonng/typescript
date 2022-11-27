@@ -7,8 +7,11 @@ pkg=$(mktemp -d pkg.XXXXXXXXXX)
 lib=$pkg/lib
 
 echo checking dependencies
+jq --version
 pnpm --version
 npm --version
+
+minify_json() { r="$(cat "$1" | jq -c)"; echo "$r" >"$1"; }
 
 divide_1000() {
   # fixed-point math divison by 1000
@@ -35,6 +38,9 @@ for f in $lib/*.js; do
 done
 
 ./dts-minify -w $lib/*.d.ts
+
+minify_json $pkg/package.json
+minify_json $lib/typesMap.json
 
 pushd $pkg
 npm pkg set \

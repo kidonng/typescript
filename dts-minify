@@ -1,0 +1,17 @@
+#! /usr/bin/env node
+
+// https://github.com/dsherret/dts_minify/issues/3
+
+var {minify} = require('dts-minify').createMinifier(require('typescript'));
+var fs = require('fs');
+var {argv} = process;
+
+if (argv[2] == '-w')
+  for (var f of argv.slice(3)) {
+    console.log(f);
+    fs.writeFileSync(f, minify(fs.readFileSync(f, 'utf8')), 'utf8');
+  }
+else if (argv[2])
+  console.log(minify(fs.readFileSync(argv[2], 'utf8')));
+else
+  console.log(minify(fs.readFileSync(0, 'utf8'))); // read stdin. fails on large inputs

@@ -1,7 +1,7 @@
 set -e
 set -x
 
-pkg=$(mktemp -d)
+pkg=$(mktemp -d pkg.XXXXXXXXXX)
 lib=$pkg/lib
 
 echo checking dependencies

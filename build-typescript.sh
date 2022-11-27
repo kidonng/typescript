@@ -1,3 +1,6 @@
+set -e
+set -x
+
 pkg=$(mktemp -d)
 lib=$pkg/lib
 

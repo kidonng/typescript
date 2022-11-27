@@ -1,14 +1,26 @@
 lockfileVersion: 5.4
 
 specifiers:
+  dts-minify: ^0.3.0
   typescript: ^4.8.4
   uglify-js: ^3.17.2
 
 devDependencies:
+  dts-minify: 0.3.0
   typescript: 4.8.4
   uglify-js: 3.17.2
 
 packages:
+
+  /dts-minify/0.3.0:
+    resolution: {integrity: sha512-785XUyfWCH4e2wJAGwaltdN6xMHsE06HDk3I203WaoOl4kxz6gQrHITDPMkWz6lu0goyTjNdzmG1aMr2ukKi3g==}
+    dependencies:
+      tslib: 2.3.1
+    dev: true
+
+  /tslib/2.3.1:
+    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+    dev: true
 
   /typescript/4.8.4:
     resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}

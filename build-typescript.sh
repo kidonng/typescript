@@ -32,6 +32,8 @@ rm -r $lib/{cs,de,es,fr,it,ja,ko,pl,pt-br,ru,tr,zh-cn,zh-tw} $pkg/loc
 
 pnpm uglifyjs --compress --mangle --output $lib/typescript.js -- $lib/typescript.js
 
+./dts-minify -w $lib/*.d.ts
+
 pushd $pkg
 npm pkg set \
 	name=@kidonng/typescript \

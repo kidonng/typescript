@@ -33,6 +33,9 @@ rm $lib/{tsserver,typingsInstaller,tsc}.js
 rm $lib/{tsserverlibrary,typescriptServices}.{js,d.ts}
 rm -r $lib/{cs,de,es,fr,it,ja,ko,pl,pt-br,ru,tr,zh-cn,zh-tw} $pkg/loc
 
+gzip $pkg/LICENSE.txt
+gzip $pkg/ThirdPartyNoticeText.txt
+
 for f in $lib/*.js; do
   pnpm uglifyjs --compress --mangle --output $f -- $f
 done

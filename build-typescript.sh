@@ -45,7 +45,7 @@ echo "relative_size = $size2 / $size1 = ${relative_size}%"
 npm pkg set \
 	description="A smaller redistribution of TypeScript. ${relative_size}% of the original size" \
 
-if [[ -n "$1" ]]; then
+if [[ "$1" == "publish" ]]; then
 	npm publish --access public
 else
 	npm pack
